@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<LangVersion>preview</LangVersion>
+		<TargetFrameworks>net472</TargetFrameworks>
+		<RootNamespace>SPlayTime</RootNamespace>
+		<NoWarn>$(NoWarn);NU1701;NU1702;CS0436</NoWarn>
+		<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+		<Nullable>annotations</Nullable>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="lib\**" />
+	  <Compile Remove="Tests\**" />
+	  <EmbeddedResource Remove="lib\**" />
+	  <EmbeddedResource Remove="Tests\**" />
+	  <None Remove="lib\**" />
+	  <None Remove="Tests\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="1.60.6" />
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="MySql.Data" Version="8.0.20" />
+		<PackageReference Include="RocketMod.Modern.Dependencies" Version="1.0.0.3" />
+		<PackageReference Include="RocketMod.Modern.Generator" Version="1.0.0.7" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Reference Include="I18N">
+	    <HintPath>lib\I18N.dll</HintPath>
+	  </Reference>
+	  <Reference Include="I18N.West">
+	    <HintPath>lib\I18N.West.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Management">
+	    <HintPath>lib\System.Management.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Runtime">
+	    <CopyLocal>True</CopyLocal>
+	  </Reference>
+	</ItemGroup>
+</Project>
